@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vite + React + TS</title>
+</head>
+
+<body>
+	<form method="POST" action="<?php echo
+APP::getUrl('index/change') ?>">
+		<select name="producer">
+			<option>test</option>
+			<option>dwa</option>
+			<!-- <?php
+foreach ($producers as $p) {
+$v = $p['producer_id'];
+$o = $p['name'];
+echo "<option value='$v'>$o<option>";
+}
+?> -->
+		</select>
+		<input type="hidden" name="stock_ids" value="<?php
+echo $stock_ids; ?>">
+		<button class="button button-bg button-larger
+button-important save-button" type="submit" name="save">Zmień</button>
+	</form>
+	<div id="root"></div>
+	<script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
